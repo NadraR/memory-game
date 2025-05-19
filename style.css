@@ -1,0 +1,119 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    overflow: hidden;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  #stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: black;
+  }
+  
+  .container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: #fff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .game-title {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    animation: glow 2s infinite alternate;
+  }
+  
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff;
+    }
+    to {
+      text-shadow: 0 0 30px  #20cfcf;
+    }
+  }
+  /* .start-btn {
+  background-color: #007bff; 
+  color: white;
+  padding: 1.2rem 2.5rem;
+  font-size: 1.4rem;
+  font-weight: bold; 
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 0 12px #007bff;
+  transition: all 0.3s ease;
+} */
+/* 
+.start-btn:hover {
+  background-color: #0056b3;
+  box-shadow: 0 0 20px #007bff;
+} */
+
+  button {
+    background-color: #20cfcf;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-size: 1.4rem;
+    font-weight: bold; 
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px #20cfcf;
+  }
+  
+  button:hover {
+    background-color:  #20cfcf;
+    box-shadow: 0 0 20px  #20cfcf;
+  }
+  
+.settings-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  z-index: 2;
+  transition: transform 0.2s ease;
+}
+
+.settings-btn:hover {
+  transform: rotate(90deg);
+}
+
+.about-btn {
+  background-color: transparent;
+  color:  #20cfcf;
+  border: 2px solid  #20cfcf;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.about-btn:hover {
+  background-color:  #20cfcf;
+  color: white;
+  box-shadow: 0 0 15px  #20cfcf;
+}
