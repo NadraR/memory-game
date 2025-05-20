@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sound Settings with Real Audio</title>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+  #stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: black;
+  }
+    .settings-container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: #fff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .section-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .setting-option {
+      margin-bottom: 15px;
+    }
+
+    .sound-settings {
+      margin-top: 10px;
+      display: none;
+    }
+
+    .volume-icon {
+      font-size: 1.8em;
+      cursor: pointer;
+      user-select: none;
+      margin-bottom: 10px;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      accent-color: #2196f3;
+    }
+
+    button {
+    background-color: #20cfcf;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    font-weight: bold; 
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px #20cfcf;
+    }
+
+    button:hover {
+    box-shadow: 0 0 15px #0ff;
+    }
+
+    audio {
+      margin-top: 20px;
+      width: 100%;
+    }
+
+  </style>
+</head>
+<body>
+
+  <canvas id="stars"></canvas>
+
+
+  <div class="position-absolute top-0 start-0 m-3">
+    <button onclick="history.back()">
+      <i class="bi bi-arrow-left"></i>
+    </button>
+  </div>
+
+
+  <div class="settings-container">
+    <div class="setting-option">
+      <button id="toggleSoundSettings">Sound Settings 🎧</button>
+    </div>
+
+    <div class="sound-settings" id="soundSettings">
+      <div class="volume-icon" id="volumeIcon" title="Click to mute/unmute">🔊</div>
+      <input type="range" id="volumeRange" min="0" max="100" value="70">
+    </div>
+
+    <audio id="myAudio" autoplay loop>
+      <source src="bg.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+  <script>
+    const toggleSoundBtn = document.getElementById('toggleSoundSettings');
+    const soundSettings = document.getElementById('soundSettings');
+    const volumeIcon = document.getElementById('volumeIcon');
+    const volumeRange = document.getElementById('volumeRange');
+    const audio = document.getElementById('myAudio');
+    
+    let previousVolume = volumeRange.value;
+    
+    toggleSoundBtn.addEventListener('click', () => {
+      const isVisible = soundSettings.style.display === 'block';
+      soundSettings.style.display = isVisible ? 'none' : 'block';
+    });
+    
+    volumeRange.addEventListener('input', () => {
+      const volume = volumeRange.value / 100;
+      audio.volume = volume;
+      
+      if (volume === 0) {
+        volumeIcon.textContent = '🔇';
+        audio.muted = true;
+      } else {
+        volumeIcon.textContent = '🔊';
+        audio.muted = false;
+        previousVolume = volumeRange.value;
+      }
+    });
+    
+    volumeIcon.addEventListener('click', () => {
+      if (audio.muted || audio.volume === 0) {
+        audio.muted = false;
+        volumeRange.value = previousVolume || 70;
+        audio.volume = volumeRange.value / 100;
+        volumeIcon.textContent = '🔊';
+      } else {
+        previousVolume = volumeRange.value;
+        audio.muted = true;
+        audio.volume = 0;
+        volumeRange.value = 0;
+        volumeIcon.textContent = '🔇';
+      }
+    });
+    
+    audio.volume = volumeRange.value / 100;
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="stars.js"></script>
+
+</body>
+</html>

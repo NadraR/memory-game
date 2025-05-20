@@ -14,9 +14,14 @@ startBtn.addEventListener("click", () => {
 
 
 document.getElementById("settingsBtn").addEventListener("click", () => {
-  window.location.href = "settings.html";
+  window.location.href = "sound.html";
+});
+
+document.getElementById("closeBtn").addEventListener("click", () => {
+      window.close();
 });
 
 document.getElementById("aboutBtn").addEventListener("click", () => {
   window.location.href = "about.html";
 });
+
