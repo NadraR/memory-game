@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Theme</title>
+    <link rel="stylesheet" href="./setting_btn.css" />
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+        height: 100%;
+        }
+
+        #stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            min-height: 100vh;
+            z-index: 0;
+            background: black;
+        }
+
+        :root {
+            --primary-color: #6c5ce7;
+            --secondary-color: #a29bfe;
+            --dark-color: #2d3436;
+            --light-color: #f5f6fa;
+            --accent-color: #fd79a8;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            color: var(--light-color);
+            overflow-x: hidden;
+        }
+        
+        .content {
+            background-color: rgba(45, 52, 54, 0.85);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 800px;
+            width: 90%;
+            margin: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin: 0;
+            background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .theme-container {
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+            width: 100%;
+        }
+        
+        .theme-option {
+            width: 50%;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .theme-option:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .theme-option:active {
+            transform: translateY(0);
+        }
+        
+        .theme-option img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .theme-option:hover img {
+            transform: scale(1.03);
+        }
+        
+        .theme-label {
+            text-align: center;
+            padding: 20px;
+            font-weight: 600;
+            font-size: 1.3rem;
+            color: white;
+            position: relative;
+        }
+        
+        .theme-label::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 3px;
+            background: var(--accent-color);
+            border-radius: 3px;
+        }
+        
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .theme-option img {
+                height: 200px;
+            }
+            
+            .content {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="stars"></canvas>
+
+    <audio id="bg-music" src="../audio/Relax Piano.mp3" preload="auto" loop></audio>
+    <button id="settingsBtn" class="settings-btn">⚙️</button>
+    
+    <div class="content">
+        <div class="header">
+            <h1>Select Your Theme</h1>
+        </div>
+        
+        <div class="theme-container">
+            <div class="theme-option" onclick="window.location.href='../stars_theme_proj/difficulty_page.html'">
+                <img src="../img/2.png" alt="Stars Theme">
+                <div class="theme-label">Theme 1</div>
+            </div>
+
+            <div class="theme-option" onclick="window.location.href='../forest_theme_proj/difficulty_page_2.html'">
+                <img src="../img/1.png" alt="Forest Theme">
+                <div class="theme-label">Theme 2</div>
+            </div>
+        </div>
+
+    </div>
+   
+    <script src="./stars.js"></script>
+    <script>
+      const bgMusic = document.getElementById("bg-music");
+
+      window.addEventListener("click", () => bgMusic.play());
+
+      document.getElementById("settingsBtn").addEventListener("click", () => {
+        window.location.href = "settings.html";
+      });
+    </script>
+</body>
+</html>
