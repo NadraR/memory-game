@@ -1,11 +1,4 @@
 const startBtn = document.getElementById("startBtn");
-const bgMusic = document.getElementById("bg-music");
-
-window.addEventListener("click", () => {
-  bgMusic.play().catch(err => {
-    console.log("Autoplay Error:", err);
-  });
-}, { once: true });
 
 startBtn.addEventListener("click", function()  {
   const nameInput = document.getElementById('playerName');
@@ -23,7 +16,7 @@ document.getElementById("settingsBtn").addEventListener("click", () => {
 });
 
 document.getElementById("closeBtn").addEventListener("click", () => {
-      window.close();
+  window.location.href = "Quit.html";
 });
 
 document.getElementById("aboutBtn").addEventListener("click", () => {
