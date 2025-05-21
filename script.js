@@ -7,11 +7,16 @@ window.addEventListener("click", () => {
   });
 }, { once: true });
 
-startBtn.addEventListener("click", () => {
+startBtn.addEventListener("click", function()  {
+  const nameInput = document.getElementById('playerName');
+  const playerName = nameInput.value.trim();
+  if (!playerName) {
+      alert('Please enter your name');
+      return;
+  }
+  localStorage.setItem('memoryGameUser', playerName);
   window.location.href = "level.html";
 });
-
-
 
 document.getElementById("settingsBtn").addEventListener("click", () => {
   window.location.href = "sound.html";
@@ -24,4 +29,9 @@ document.getElementById("closeBtn").addEventListener("click", () => {
 document.getElementById("aboutBtn").addEventListener("click", () => {
   window.location.href = "about.html";
 });
+
+const storedUser = localStorage.getItem('memoryGameUser');
+if (storedUser) {
+  document.getElementById('playerName').value = storedUser;
+}
 
