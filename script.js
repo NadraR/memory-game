@@ -27,4 +27,7 @@ const storedUser = localStorage.getItem('memoryGameUser');
 if (storedUser) {
   document.getElementById('playerName').value = storedUser;
 }
+document.getElementById("startBtn").addEventListener("click", function () {
+    window.location.href = "select_theme/select_theme_page/select_theme.html"; 
+  });
 

@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -47,23 +46,21 @@
       text-shadow: 0 0 30px  #20cfcf;
     }
   }
-  /* .start-btn {
-  background-color: #007bff; 
-  color: white;
-  padding: 1.2rem 2.5rem;
-  font-size: 1.4rem;
-  font-weight: bold; 
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  box-shadow: 0 0 12px #007bff;
-  transition: all 0.3s ease;
-} */
-/* 
-.start-btn:hover {
-  background-color: #0056b3;
-  box-shadow: 0 0 20px #007bff;
-} */
+
+  .centerbtn {
+    background-color: #20cfcf;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-size: 1.4rem;
+    font-weight: bold; 
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px #20cfcf;
+    margin: 20px;
+    width: 200px;
+  } 
 
   button {
     background-color: #20cfcf;
@@ -131,7 +128,7 @@
 input.form-control {
   margin: 10px;
   padding: 1rem;
-  width: 80%;
+  width: 200px;
   max-width: 200px;
   font-size: 1.2rem;
   border: 2px solid #20cfcf;
@@ -150,6 +147,8 @@ input.form-control::placeholder {
 input.form-control:focus {
   box-shadow: 0 0 20px #20cfcf;
 }
+
+.main
 .form-label {
   color: #ddf3f3;
   font-size: 1.2rem;
