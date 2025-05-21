@@ -16,5 +16,9 @@ levelButtons.forEach(button => {
 });
 
 document.getElementById("settingsBtn").addEventListener("click", () => {
-  window.location.href = "settings.html";
+  window.location.href = "sound.html";
+});
+
+document.getElementById("closeBtn").addEventListener("click", () => {
+  window.location.href = "Quit.html";
 });
