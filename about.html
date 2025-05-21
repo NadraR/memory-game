@@ -5,7 +5,7 @@
   <title>About - Memory Match Game</title>
   <style>
     body {
-      background-image: url('night_cloud4.jpg');
+      /* background-image: url('night_cloud4.jpg'); */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -71,9 +71,20 @@
       box-shadow: 0 0 15px #0ff;
     
     }
+
+     #stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: black;
+  }
   </style>
 </head>
 <body>
+    <canvas id="stars"></canvas>
   <div class="about-box">
     <h1>About the Game</h1>
     <h2>Matching Card Game 🧠</h2>
@@ -84,7 +95,8 @@
     <h3>🟢 Easy – 16 cards (8 matching pairs)</h3>
     <h3>🟡 Medium – 36 cards (18 matching pairs)</h3>
     <h3>🔴 Hard – 64 cards (32 matching pairs)</h3>
-    <button class="back-btn" onclick="window.location.href='index.html'">⬅ Back to Game</button>
+    <button class="back-btn" onclick="window.location.href='welcome.html'">⬅ Back to Game</button>
   </div>
+  <script src="stars.js"></script>
 </body>
 </html>
