@@ -130,3 +130,40 @@
   color: white;
   box-shadow: 0 0 15px  #20cfcf;
 }
+input.form-control {
+  margin: 10px;
+  padding: 1rem;
+  width: 80%;
+  max-width: 200px;
+  font-size: 1.2rem;
+  border: 2px solid #20cfcf;
+  border-radius: 12px;
+  outline: none;
+  background-color: transparent;
+  color: #fff;
+  box-shadow: 0 0 10px #20cfcf;
+  transition: all 0.3s ease;
+}
+input.form-control::placeholder {
+  color: #aaa;
+  font-size: smaller;
+}
+
+input.form-control:focus {
+  box-shadow: 0 0 20px #20cfcf;
+}
+.form-label {
+  color: #ddf3f3;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  margin-right: 10px;
+  padding: 5px 10px;
+  display: block;
+  font-weight: 600;
+  text-shadow: 0 0 5px #20cfcf;
+  letter-spacing: 0.5px;
+}
+.form-label::before {
+  content: "✦ ";
+  color: #cadada;
+}
