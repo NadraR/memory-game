@@ -114,51 +114,7 @@
       Your browser does not support the audio element.
     </audio>
   </div>
-  <script>
-    const toggleSoundBtn = document.getElementById('toggleSoundSettings');
-    const soundSettings = document.getElementById('soundSettings');
-    const volumeIcon = document.getElementById('volumeIcon');
-    const volumeRange = document.getElementById('volumeRange');
-    const audio = document.getElementById('myAudio');
-    
-    let previousVolume = volumeRange.value;
-    
-    toggleSoundBtn.addEventListener('click', () => {
-      const isVisible = soundSettings.style.display === 'block';
-      soundSettings.style.display = isVisible ? 'none' : 'block';
-    });
-    
-    volumeRange.addEventListener('input', () => {
-      const volume = volumeRange.value / 100;
-      audio.volume = volume;
-      
-      if (volume === 0) {
-        volumeIcon.textContent = '🔇';
-        audio.muted = true;
-      } else {
-        volumeIcon.textContent = '🔊';
-        audio.muted = false;
-        previousVolume = volumeRange.value;
-      }
-    });
-    
-    volumeIcon.addEventListener('click', () => {
-      if (audio.muted || audio.volume === 0) {
-        audio.muted = false;
-        volumeRange.value = previousVolume || 70;
-        audio.volume = volumeRange.value / 100;
-        volumeIcon.textContent = '🔊';
-      } else {
-        previousVolume = volumeRange.value;
-        audio.muted = true;
-        audio.volume = 0;
-        volumeRange.value = 0;
-        volumeIcon.textContent = '🔇';
-      }
-    });
-    
-    audio.volume = volumeRange.value / 100;
-    </script>
+  <script src="sound.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="stars.js"></script>
 

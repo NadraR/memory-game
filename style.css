@@ -109,9 +109,7 @@
   transition: transform 0.2s ease;
 }
 
-.settings-btn:hover {
-  transform: rotate(90deg);
-}
+
 
 .about-btn {
   background-color: transparent;
