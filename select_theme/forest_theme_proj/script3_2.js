@@ -22,10 +22,10 @@ function playFlipSound() {
 }
 
 const symbolsSet = [
-  "🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼",
-  "🐨", "🐯", "🦁", "🐮", "🐷", "🐽", "🐸", "🐵",
-  "🙈", "🙉", "🙊", "🐒", "🦍", "🦧", "🐔", "🐧",
-  "🐦", "🐤", "🦆", "🦅", "🦉", "🦇", "🐺", "🦝"
+"🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼",
+"🐨", "🐯", "🦁", "🐮", "🐷", "🐽", "🐸", "🐵",
+"🙈", "🙉", "🙊", "🐒", "🦍", "🦧", "🐔", "🐧",
+"🐦", "🐤", "🦆", "🦅", "🦉", "🦇", "🐺", "🦝"
 ];
 
 let time = 0;
@@ -125,8 +125,8 @@ function checkMatch() {
 
         matchedPairs++;
         if (matchedPairs == cards.length / 2) {
-              clearInterval(timerInterval);
-             setTimeout(showWinBox, 300);
+            clearInterval(timerInterval);
+            setTimeout(showWinBox, 300);
         }
 
     } else {
@@ -169,6 +169,13 @@ function startGame() {
 restartBtn.addEventListener('click', startGame);
 
 function showWinBox() {
+    const winBox = document.getElementById('winBox');
+    if (!winBox) {
+        console.error('winBox not found!');
+        return;
+    }
+    const playerName = localStorage.getItem('memoryGameUser') ;
+    document.getElementById('winPlayerName').textContent = playerName; 
     document.getElementById('winMoves').textContent = moves;
     document.getElementById('winTime').textContent = timer.textContent;
     document.getElementById('winBox').classList.remove('hidden');
