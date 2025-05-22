@@ -1,9 +1,4 @@
-const bgMusic = document.getElementById("bg-music");
 
-window.addEventListener("click", () => bgMusic.play());
-document.getElementById("settingsBtn").addEventListener("click", () => {
-    window.location.href = "settings.html";
-});
 // start the game
 const grid = document.querySelector('.game_grid');
 const moveCounter = document.querySelector('#move_counter');
@@ -180,4 +175,12 @@ document.getElementById('playAgainBtn').addEventListener('click', () => {
 
 document.getElementById('about_btn').addEventListener('click', () => {
     window.location.href = 'about.html';
+});
+
+document.getElementById("settingsBtn").addEventListener("click", () => {
+  window.location.href = "../../sound.html";
+});
+
+document.getElementById("closeBtn").addEventListener("click", () => {
+    window.open("../../Quit.html","_self");
 });

@@ -1,10 +1,4 @@
-const bgMusic = document.getElementById("bg-music");
 
-window.addEventListener("click", () => {
-  bgMusic.play().catch(err => {
-    console.log("Autoplay Error:", err);
-  });
-}, { once: true });
 
 const levelButtons = document.querySelectorAll('.level-btn');
 
@@ -20,5 +14,5 @@ document.getElementById("settingsBtn").addEventListener("click", () => {
 });
 
 document.getElementById("closeBtn").addEventListener("click", () => {
-  window.location.href = "Quit.html";
+  window.history.back();
 });
