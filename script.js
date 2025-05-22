@@ -8,7 +8,7 @@ startBtn.addEventListener("click", function()  {
       return;
   }
   localStorage.setItem('memoryGameUser', playerName);
-  window.location.href = "level.html";
+  window.location.href = "select_theme/select_theme_page/select_theme.html";
 });
 
 document.getElementById("settingsBtn").addEventListener("click", () => {
