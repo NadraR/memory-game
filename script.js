@@ -15,12 +15,9 @@ document.getElementById("settingsBtn").addEventListener("click", () => {
   window.location.href = "sound.html";
 });
 
-document.getElementById("closeBtn").addEventListener("click", () => {
-  window.history.back();
-});
 
 document.getElementById("aboutBtn").addEventListener("click", () => {
-  window.location.href = "about.html";
+  window.location.href = "./about.html";
 });
 
 const storedUser = localStorage.getItem('memoryGameUser');
