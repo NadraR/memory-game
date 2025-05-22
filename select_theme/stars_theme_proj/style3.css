@@ -9,15 +9,26 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed; 
     color: #c0e0eb;
     font-weight: 600;
     font-family: 'Arial', sans-serif;
     font-size: 18px;
-    min-height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+}
+
+.content-wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .game-container {
@@ -28,20 +39,29 @@ body {
     text-align: center;
     background: rgba(0,0,0,0.5);
     padding: 20px;
-    margin: 15px;
+    margin: 10px 0;
     border-radius: 10px;
     box-shadow: 0 0 20px rgb(32, 249, 249);
 }
 
+.title {
+    margin: 10px;
+    font-size: 20px;
+}
+
 .difficulty-buttons {
-    margin: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10px;
 }
 
 .difficulty {
     width: 80px;
     margin: 5px 10px;
-    padding: 10px 0;
-    font-size: 14px;
+    height: 35px;
+    font-size: 80%;
     border: none;
     border-radius: 5px;
     background: rgb(52, 196, 196);
@@ -55,16 +75,18 @@ body {
 }
 
 .game_grid {
+    width: 100%;
+    aspect-ratio: 1/1;
     display: grid;
-    gap: 10px;
-    justify-items: center;
-    align-items: center;
-    margin: 15px;
+    gap: 5px;
+    margin: 5px 0;
+    max-height: calc(100% - 150px);
 }
 
 .card {
-    width: clamp(5px, 10vw, 70px);
-    height: clamp(5px, 10vw, 70px);
+    width: 100%;
+    aspect-ratio: 1/1;
+    font-size: inherit;
     background-image: url('../img/back.png');
     background-color: #113a51;
     background-size: 60% 60%;
@@ -81,6 +103,13 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.symbol {
+    font-size: inherit;
+    display: block;
+    text-align: center;
+    user-select: none;
+    line-height: 1;
+}
 
 .card:hover {
     box-shadow: 0 0 15px #0ff;
@@ -99,7 +128,7 @@ body {
 }
 
 #restart_btn {
-    margin: 15px;
+    margin: 7px;
     background: rgb(52, 196, 196);
     color: rgb(32, 16, 16);
     font-weight: 600;
@@ -107,7 +136,7 @@ body {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 80%;
     transition: box-shadow 0.3s ease;
 }
 
@@ -116,8 +145,8 @@ body {
 }
 
 .game_info p{
-    margin: 10px;
-    font-size: 16px;
+    margin: 8px;
+    font-size: 18px;
     color: #c0e0eb;
 }
 
@@ -168,25 +197,43 @@ body {
 }
 
 .win-content button:hover {
-    box-shadow: 0 0 15px #0ff;
-}
-
-@media (max-width: 480px) {
-    body {
-        overflow-x: auto;
-    }
-    .game-container {
-        width: 95%;
-        margin: 5px;
-    }
-    .game_grid {
-        gap: 5px;
-    }
+    box-shadow: 0 0 15px rgb(52, 196, 196);
 }
 
 @media (max-width: 600px) {
     
     .win-content {
-        padding: 20px;
+        padding: 15px 20px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .game-container {
+        padding: 5px;
+        height: calc(100vh - 50px);
+    }
+    
+    .game_grid {
+        gap: 3px;
+        max-height: calc(100% - 120px);
+    }
+    
+    .card {
+        font-size: min(4vw, 20px);
+    }
+}
+
+@media screen and (max-height: 700px) {
+    .game_grid {
+        gap: 2px;
+    }
+    
+    .difficulty {
+        padding: 3px;
+        margin: 2px;
+    }
+    
+    .game_info p {
+        font-size: 12px;
     }
 }
