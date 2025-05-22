@@ -9,27 +9,30 @@
 </head>
 <body>
     <audio id="bg-music" src="../audio/Relax Piano.mp3" autoplay loop></audio>
-    <button id="settingsBtn" class="settings-btn">⚙️</button>
-  <button id="closeBtn" class="close-btn" style="color: rgb(180, 202, 223); font-size: 45px;">⬅</button>
+    <div class="settings_container">
+        <div><button id="closeBtn" class="close-btn" style="color: rgb(180, 202, 223); font-size: 45px;">⬅</button></div>
+        <div><button id="settingsBtn" class="settings-btn">⚙️</button></div>
+    </div>
+    <div class="content-wrapper">
+        <div class="game-container">
+            <div class="title">MEMORY GAME</div>
 
-    <div class="game-container">
-        <div class="title">MEMORY GAME</div>
+            <div class="difficulty-buttons">
+                <div><button class="difficulty" value="4">Easy</button></div>
+                <div><button class="difficulty" value="6">Medium</button></div>
+                <div><button class="difficulty" value="8">Hard</button></div>
+            </div>
 
-        <div class="difficulty-buttons">
-            <button class="difficulty" value="4">Easy</button>
-            <button class="difficulty" value="6">Medium</button>
-            <button class="difficulty" value="8">Hard</button>
+            <div class="game_grid">
+            </div>
+
+            <div class="game_info">
+                <p>Moves: <span id="move_counter">0</span></p>
+                <p>Time: <span id="timer">00:00</span></p>
+            </div>
+
+            <button id="restart_btn">Restart Game</button>
         </div>
-
-        <div class="game_grid">
-        </div>
-
-        <div class="game_info">
-            <p>Moves: <span id="move_counter">0</span></p>
-            <p>Time: <span id="timer">00:00</span></p>
-        </div>
-
-        <button id="restart_btn">Restart Game</button>
     </div>
     <div id="winBox" class="hidden">
         <div class="win-content">
@@ -41,14 +44,15 @@
     </div>
     <script>
         document.getElementById("settingsBtn").addEventListener("click", () => {
-            window.location.href = "../../sound.html";
+        window.location.href = "../../sound.html";
         });
+
         document.getElementById("closeBtn").addEventListener("click", () => {
-            window.history.back();
+             window.history.back();
         });
     </script>
-    <script src="../../applySoundSettings.js"></script>
-    <script src="script3_2.js"></script>
+<script src="../../applySoundSettings.js"></script>
 
+    <script src="script3_2.js"></script>
 </body>
 </html>
