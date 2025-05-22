@@ -150,13 +150,26 @@
                 padding: 25px;
             }
         }
+        .close-btn{
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 28px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: white;
+            z-index: 2;
+            transition: transform 0.2s ease;
+        }
     </style>
 </head>
 <body>
     <canvas id="stars"></canvas>
 
-    <audio id="bg-music" src="../audio/Relax Piano.mp3" preload="auto" loop></audio>
+    <audio id="bg-music" src="../audio/Relax Piano.mp3" autoplay loop></audio>
     <button id="settingsBtn" class="settings-btn">⚙️</button>
+  <button id="closeBtn" class="close-btn" style="color: rgb(180, 202, 223); font-size: 45px;">⬅</button>
     
     <div class="content">
         <div class="header">
@@ -176,18 +189,18 @@
         </div>
 
     </div>
+    <script src="../../applySoundSettings.js"></script>
    
     <script src="./stars.js"></script>
     <script>
-      const bgMusic = document.getElementById("bg-music");
-
-      window.addEventListener("click", () => bgMusic.play());
 
       document.getElementById("settingsBtn").addEventListener("click", () => {
-        window.location.href = "settings.html";
-
-
+        window.location.href = "../../sound.html";
       });
+
+        document.getElementById("closeBtn").addEventListener("click", () => {
+            window.history.back()
+    });
     </script>
 </body>
 </html>

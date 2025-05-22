@@ -108,6 +108,8 @@
   color: white;
   z-index: 2;
   transition: transform 0.2s ease;
+  box-shadow: none;
+
 }
 
 .close-btn{
@@ -121,5 +123,7 @@
   color: white;
   z-index: 2;
   transition: transform 0.2s ease;
+  box-shadow: none;
+
 }
 

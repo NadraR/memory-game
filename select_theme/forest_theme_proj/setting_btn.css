@@ -14,3 +14,16 @@
 .settings-btn:hover {
   transform: rotate(90deg);
 }
+
+.close-btn{
+    position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  z-index: 2;
+  transition: transform 0.2s ease;
+}
