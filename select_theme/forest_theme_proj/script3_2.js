@@ -190,9 +190,7 @@ document.getElementById('playAgainBtn').addEventListener('click', () => {
     startGame();
 });
 
-document.getElementById('about_btn').addEventListener('click', () => {
-    window.location.href = 'about.html';
-});
+
 
 
 
