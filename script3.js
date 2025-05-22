@@ -129,6 +129,13 @@ function startGame() {
 }
 
 function showWinBox() {
+    const winBox = document.getElementById('winBox');
+    if (!winBox) {
+        console.error('winBox not found!');
+        return;
+    }
+    const playerName = localStorage.getItem('memoryGameUser') ;
+    document.getElementById('winPlayerName').textContent = playerName; 
     document.getElementById('winMoves').textContent = moves;
     document.getElementById('winTime').textContent = timer.textContent;
     document.getElementById('winBox').classList.remove('hidden');
@@ -137,10 +144,6 @@ function showWinBox() {
 document.getElementById('playAgainBtn').addEventListener('click', () => {
     document.getElementById('winBox').classList.add('hidden');
     startGame();
-});
-
-document.getElementById('about_btn').addEventListener('click', () => {
-    window.location.href = 'about.html';
 });
 
 restartBtn.addEventListener('click', startGame);
