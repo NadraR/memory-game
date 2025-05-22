@@ -48,3 +48,7 @@ window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 });
+
+document.getElementById("settingsBtn").addEventListener("click", () => {
+  window.location.href = "sound.html";
+});

@@ -9,8 +9,9 @@
 <body>
     <canvas id="stars"></canvas>
     
-    <audio id="bg-music" src="../audio/Relax Piano.mp3" preload="auto" loop></audio>
+    <audio id="bg-music" src="../audio/Relax Piano.mp3" autoplay loop></audio>
     <button id="settingsBtn" class="settings-btn">⚙️</button>
+  <button id="closeBtn" class="close-btn" style="color: rgb(180, 202, 223); font-size: 45px;">⬅</button>
 
     <div class="game-container">
         <h1 class="title">🌟 Select Difficulty 🌟</h1>
@@ -21,15 +22,16 @@
             <button class="difficulty" value="8">Hard</button>
         </div>
     </div>
+<script src="./stars.js"></script>
+<script src="../../applySoundSettings.js"></script>
 
 <script>
 
-      const bgMusic = document.getElementById("bg-music");
-
-      window.addEventListener("click", () => bgMusic.play());
-
+      document.getElementById("closeBtn").addEventListener("click", () => {
+      window.history.back();
+      });
       document.getElementById("settingsBtn").addEventListener("click", () => {
-        window.location.href = "settings.html";
+        window.location.href = "../../sound.html";
       });
 
     const buttons = document.querySelectorAll('.difficulty');
@@ -42,6 +44,5 @@
     });
 
 </script>
-<script src="./stars.js"></script>
 </body>
 </html>

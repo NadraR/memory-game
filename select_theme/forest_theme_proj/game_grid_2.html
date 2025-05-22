@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="setting_btn.css" />
 </head>
 <body>
-    <audio id="bg-music" src="../audio/Relax Piano.mp3" preload="auto" loop></audio>
+    <audio id="bg-music" src="../audio/Relax Piano.mp3" autoplay loop></audio>
     <button id="settingsBtn" class="settings-btn">⚙️</button>
+  <button id="closeBtn" class="close-btn" style="color: rgb(180, 202, 223); font-size: 45px;">⬅</button>
 
     <div class="game-container">
         <div class="title">MEMORY GAME</div>
@@ -38,8 +39,16 @@
             <button id="playAgainBtn">Play Again</button>
         </div>
     </div>
-
-
+    <script>
+        document.getElementById("settingsBtn").addEventListener("click", () => {
+            window.location.href = "../../sound.html";
+        });
+        document.getElementById("closeBtn").addEventListener("click", () => {
+            window.history.back();
+        });
+    </script>
+    <script src="../../applySoundSettings.js"></script>
     <script src="script3_2.js"></script>
+
 </body>
 </html>

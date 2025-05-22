@@ -1,9 +1,4 @@
-const bgMusic = document.getElementById("bg-music");
 
-window.addEventListener("click", () => bgMusic.play());
-document.getElementById("settingsBtn").addEventListener("click", () => {
-    window.location.href = "settings.html";
-});
 // start the game
 const grid = document.querySelector('.game_grid');
 const moveCounter = document.querySelector('#move_counter');
@@ -184,4 +179,9 @@ document.getElementById('playAgainBtn').addEventListener('click', () => {
     document.getElementById('winBox').classList.add('hidden');
     startGame();
 });
+
+document.getElementById("settingsBtn").addEventListener("click", () => {
+  window.location.href = "../../sound.html";
+});
+
 

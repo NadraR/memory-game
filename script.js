@@ -16,7 +16,7 @@ document.getElementById("settingsBtn").addEventListener("click", () => {
 });
 
 document.getElementById("closeBtn").addEventListener("click", () => {
-  window.location.href = "Quit.html";
+  window.history.back();
 });
 
 document.getElementById("aboutBtn").addEventListener("click", () => {
