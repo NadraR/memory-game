@@ -119,8 +119,8 @@ function checkMatch() {
 
         matchedPairs++;
         if (matchedPairs == cards.length / 2) {
-              clearInterval(timerInterval);
-             setTimeout(showWinBox, 300);
+            clearInterval(timerInterval);
+            setTimeout(showWinBox, 300);
         }
 
     } else {

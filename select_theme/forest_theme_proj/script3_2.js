@@ -186,9 +186,7 @@ document.getElementById('playAgainBtn').addEventListener('click', () => {
     startGame();
 });
 
-document.getElementById('about_btn').addEventListener('click', () => {
-    window.location.href = 'about.html';
-});
+
 
 document.getElementById("settingsBtn").addEventListener("click", () => {
   window.location.href = "../../sound.html";
