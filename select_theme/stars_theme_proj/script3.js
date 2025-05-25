@@ -20,7 +20,7 @@ function playFlipSound() {
     flipSound.play();
 }
 
-const symbolsSet = ['💎', '🌶️', '🍇', '🍉', '🍍', '🍓', '🌝','😍', '😎', '🐱', '🐶', '🐵', '🐻', '🐼', '🐸', '🦁', '🐯', '🐨', '🦊', '🐰', '🐔', '🦄', '🐮', '🐘', '🦓', '🐙', '🐬', '🐠', '🐞', '🦋', '🌸', '🌟'];
+const symbolsSet = ['💎', '🌶️', '🍇', '🍉', '🍍', '🍓', '🌝','😍', '😎', '🐱', '🐶', '🐵', '🐻', '🐼', '🐸', '🦁', '🐯', '🐨', '🦊', '🐰', '🐔', '🦄', '🐮', '🐘', '🦓', '🐙', '🔮', '🐠', '🐞', '🦋', '🌸', '🌟'];
 
 let time = 0;
 let timerInterval;
@@ -73,6 +73,7 @@ function shuffleCards(array) {
 function createBoard() {
     grid.innerHTML = '';
     grid.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+    grid.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
 
     const totalCards = gridSize * gridSize;
     const selectedSymbols = symbolsSet.slice(0, totalCards / 2);
@@ -92,7 +93,13 @@ function flipCard() {
     if (flippedCards.length < 2 && !this.classList.contains('flipped') && this.style.pointerEvents != 'none') {
         this.classList.add('flipped');
 
-        this.innerHTML = this.dataset.symbol;
+        this.innerHTML = '';
+
+        const symbolSpan = document.createElement('span');
+        symbolSpan.classList.add('symbol');
+        symbolSpan.textContent = this.dataset.symbol;
+        this.appendChild(symbolSpan);
+
         flippedCards.push(this);
         playFlipSound();
         if (flippedCards.length == 2) {
@@ -143,10 +150,24 @@ function startGame() {
 
     createBoard();
 
+    const gridElement = document.querySelector('.game_grid');
+    const cardSize = gridElement.clientWidth / gridSize;
+    const fontSize = Math.min(cardSize * 0.4, 30);
+
+    document.querySelectorAll('.card').forEach(card => {
+        card.style.fontSize = `${fontSize}px`;
+    });
+    
     setTimeout(() => {
         document.querySelectorAll('.card').forEach(card => {
             card.classList.add('flipped');
-            card.innerHTML = card.dataset.symbol;
+
+            card.innerHTML = '';
+            const span = document.createElement('span');
+            span.classList.add('symbol');
+            span.textContent = card.dataset.symbol;
+            card.appendChild(span);
+
             card.style.pointerEvents = 'none';
         });
         setTimeout(() => {

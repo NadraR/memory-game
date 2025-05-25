@@ -1,13 +1,19 @@
+.settings_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
 .settings-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
   font-size: 28px;
   background: none;
   border: none;
   cursor: pointer;
   color: white;
-  z-index: 2;
   transition: transform 0.2s ease;
 }
 
@@ -16,14 +22,50 @@
 }
 
 .close-btn{
-    position: absolute;
-  top: 20px;
-  left: 20px;
   font-size: 28px;
   background: none;
   border: none;
   cursor: pointer;
   color: white;
-  z-index: 2;
   transition: transform 0.2s ease;
+}
+
+.close-btn:hover {
+  transform: scale(1.1);
+}
+
+@media (max-height: 800px) {
+    .settings-btn {
+        transform: scale(0.9);
+    }
+    .close-btn {
+        transform: scale(0.9);
+    }
+}
+
+@media (max-height: 700px) {
+    .settings-btn {
+        transform: scale(0.8);
+    }
+    .close-btn {
+        transform: scale(0.8);
+    }
+}
+
+@media (max-height: 600px) {
+    .settings-btn {
+        transform: scale(0.7);
+    }
+    .close-btn {
+        transform: scale(0.7);
+    }
+}
+
+@media (max-height: 500px) {
+    .settings-btn {
+        transform: scale(0.4);
+    }
+    .close-btn {
+        transform: scale(0.4);
+    }
 }
